@@ -1,13 +1,168 @@
 <!DOCTYPE html>
+<!--
+Template Name: Academic Education V2
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {#<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">#}
+        <link rel="stylesheet" href="{{ asset('css/layout.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/fontawesome-4.2.0.min.css') }}" />
+        {#<link rel="stylesheet" href="{{ asset('nivo-lightbox/nivo-lightbox.min.css') }}" />#}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body id="top">
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row0">
+        <div id="topbar" class="clear">
+            <!-- ################################################################################################ -->
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">A - Z Index</a></li>
+                    <li><a href="#">Member Login</a></li>
+                    <li><a href="#">Staff Login</a></li>
+                </ul>
+            </nav>
+            <!-- ################################################################################################ -->
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row1">
+        <header id="header" class="clear">
+            <!-- ################################################################################################ -->
+            <div id="logo" class="fl_left">
+                <a href="{{ path('index') }}" ><img class="rounded" src="{{ asset ('images/header.jpg') }}" /></a>
+            </div>
+            {#<div class="fl_right">
+                <form class="clear" method="post" action="#">
+                    <fieldset>
+                        <legend>Search:</legend>
+                        <input type="text" value="" placeholder="Search Here">
+                        <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
+                    </fieldset>
+                </form>
+            </div>#}
+            <!-- ################################################################################################ -->
+        </header>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row2">
+        <div class="rounded">
+            <nav id="mainav" class="clear">
+                <!-- ################################################################################################ -->
+                <ul class="clear">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a class="drop" href="#">Pages</a>
+                        <ul>
+                            <li><a href="pages/gallery.html">Gallery</a></li>
+                            <li><a href="pages/portfolio.html">Portfolio</a></li>
+                            <li><a href="pages/full-width.html">Full Width</a></li>
+                            <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
+                            <li><a href="pages/sidebar-left-2.html">Sidebar Left 2</a></li>
+                            <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
+                            <li><a href="pages/sidebar-right-2.html">Sidebar Right 2</a></li>
+                            <li><a href="pages/basic-grid.html">Basic Grid</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="drop" href="#">Dropdown</a>
+                        <ul>
+                            <li><a href="#">Level 2</a></li>
+                            <li><a class="drop" href="#">Level 2 + Drop</a>
+                                <ul>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Link Text</a></li>
+                    <li><a href="#">Another Link Text</a></li>
+                    <li><a href="#">This a very long link</a></li>
+                    <li><a href="#">This is the last</a></li>
+                </ul>
+                <!-- ################################################################################################ -->
+            </nav>
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    {% block body %}{% endblock %}
+    <!-- ################################################################################################ -->
+    <div class="wrapper row4">
+        <div class="rounded">
+            <footer id="footer" class="clear">
+                <!-- ################################################################################################ -->
+                <div class="one_third first">
+                    <figure class="center"><img class="btmspace-15" src="images/demo/worldmap.png" alt="">
+                        <figcaption><a href="#">Find Us With Google Maps &raquo;</a></figcaption>
+                    </figure>
+                </div>
+                <div class="one_third">
+                    <address>
+                        Long Educational Facility Name<br>
+                        Address Line 2<br>
+                        Town/City<br>
+                        Postcode/Zip<br>
+                        <br>
+                        <i class="fa fa-phone pright-10"></i> xxxx xxxx xxxxxx<br>
+                        <i class="fa fa-envelope-o pright-10"></i> <a href="#">contact@domain.com</a>
+                    </address>
+                </div>
+                <div class="one_third">
+                    <p class="nospace btmspace-10">Stay Up to Date With What's Happening</p>
+                    <ul class="faico clear">
+                        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="faicon-flickr" href="#"><i class="fa fa-flickr"></i></a></li>
+                        <li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                    <form class="clear" method="post" action="#">
+                        <fieldset>
+                            <legend>Subscribe To Our Newsletter:</legend>
+                            <input type="text" value="" placeholder="Enter Email Here&hellip;">
+                            <button class="fa fa-sign-in" type="submit" title="Sign Up"><em>Sign Up</em></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- ################################################################################################ -->
+            </footer>
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row5">
+        <div id="copyright" class="clear">
+            <!-- ################################################################################################ -->
+            <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="http://www.lapwings.com">Lapwings</a></p>
+            <p class="fl_right">Website by <a href="#">GeKri</a> & <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <!-- ################################################################################################ -->
+        </div>
+    </div>
+    <!-- JAVASCRIPTS -->
+    <script type="text/javascript" src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.fitvids.min.js.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.mobilemenu.js.js') }}"></script>
+    {#<script type="text/javascript" src="{{ asset('tabslet/jquery.tabslet.min.js.js') }}"></script>#}
+    {#<script type="text/javascript" src="{{ asset('nivo-lightbox/nivo-lightbox.min.js') }}"></script>#}
+    {#<script src="{{ asset('js/jquery.tabslet.min.js') }}"></script>#}
+    <script src="{{ asset('js/script.js') }}"></script>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
