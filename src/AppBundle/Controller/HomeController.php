@@ -16,11 +16,14 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="index")
      */
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('home/home.html.twig');
+        return $this->render('homepage/index.html.twig');
     }
+}
+{
+
 }
