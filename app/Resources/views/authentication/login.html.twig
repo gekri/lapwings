@@ -1,10 +1,10 @@
-{#
-{% extends 'base.html.twig' %}
-{% block title %}Sign in{% endblock %}
-#}
-{% block body %}
+{% extends "baseadmin.html.twig" %}
+
+{% block title %}<title>Admin - Sign in</title>{% endblock %}
+
+{% block content %}
     <div class="container">
-        {% include 'navigation/adminmenu.html.twig' %}
+       
         <h3>Sign in</h3>
         {% if error %}
             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
