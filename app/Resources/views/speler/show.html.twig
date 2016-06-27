@@ -1,0 +1,59 @@
+{#
+{% extends "base.html.twig" %}
+{% block title %}Spelerslijst{% endblock %}
+#}
+
+{% block body %}
+    <h1>Speler</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Foto</th>
+                <td><img src="{{ asset(speler.webPath) }}" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <th>Voornaam</th>
+                <td>{{ speler.voornaam }}</td>
+            </tr>
+            <tr>
+                <th>Achternaam</th>
+                <td>{{ speler.achternaam }}</td>
+            </tr>
+            <tr>
+                <th>Geboortedatum</th>
+                <td>{% if speler.geboortedatum %}{{ speler.geboortedatum|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Aansluitingsdatum</th>
+                <td>{% if speler.aansluitingsdatum %}{{ speler.aansluitingsdatum|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Aansluitingsnummer</th>
+                <td>{{ speler.aansluitingsnummer }}</td>
+            </tr>
+            <tr>
+                <th>Eindeaansluiting</th>
+                <td>{% if speler.eindeAansluiting %}{{ speler.eindeAansluiting|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ speler.path }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('speler_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('speler_edit', { 'id': speler.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

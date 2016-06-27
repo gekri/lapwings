@@ -1,0 +1,83 @@
+{#
+{% extends "base.html.twig" %}
+{% block title %}Spelers{% endblock %}
+#}
+
+{% block body %}
+    <h1>Spelerslijst</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Lid nummer</th>
+            <th>Aansluitingsdatum</th>
+            <th>Naam</th>
+            <th>Voornaam</th>
+            <th>Geboortejaar</th>
+            <th>Toon details</th>
+            <th>Wijzig</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for speler in spelers %}
+            <tr>
+                <td>{{ speler.aansluitingsnummer }}</td>
+                <td>{% if speler.aansluitingsdatum %}{{ speler.aansluitingsdatum|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ speler.achternaam }}</td>
+                <td>{{ speler.voornaam }}</td>
+                <td>{% if speler.geboortedatum %}{{ speler.geboortedatum|date('Y-m-d') }}{% endif %}</td>
+                <td><a href="{{ path('speler_show', { 'id': speler.id }) }}">Details</a></td>
+                <td><a href="{{ path('speler_edit', { 'id': speler.id }) }}">Wijzig</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{#
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>Geboortedatum</th>
+                <th>Aansluitingsdatum</th>
+                <th>Aansluitingsnummer</th>
+                <th>Eindeaansluiting</th>
+                <th>Path</th>
+                <th>Pic</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for speler in spelers %}
+            <tr>
+                <td><a href="{{ path('speler_show', { 'id': speler.id }) }}">{{ speler.id }}</a></td>
+                <td>{{ speler.voornaam }}</td>
+                <td>{{ speler.achternaam }}</td>
+                <td>{% if speler.geboortedatum %}{{ speler.geboortedatum|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if speler.aansluitingsdatum %}{{ speler.aansluitingsdatum|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ speler.aansluitingsnummer }}</td>
+                <td>{% if speler.eindeAansluiting %}{{ speler.eindeAansluiting|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ speler.path }}</td>
+                <td><img src="{{ asset(speler.webPath) }}" style="width: 50px"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('speler_show', { 'id': speler.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('speler_edit', { 'id': speler.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+#}
+    <ul>
+        <li>
+            <a href="{{ path('speler_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

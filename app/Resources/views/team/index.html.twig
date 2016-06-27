@@ -1,0 +1,40 @@
+{#
+#}
+{% extends 'baseadmin.html.twig' %}
+
+{% block content %}
+    <h1>Alle Teams</h1>
+    <div class="table-responsive table-hover">
+        <table class="table">
+            <thead>
+            <tr>
+
+                <th>Naam</th>
+
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for team in teams %}
+                <tr>
+
+                    <td><a href="{{ path('admin_team_show', { 'id': team.id }) }}">{{ team.afkorting }} ({{ team.naam }}
+                            )</a></td>
+
+                    <td>
+
+                        {#<a href="{{ path('admin_team_show', { 'id': team.id }) }}">show</a>#}
+
+                        <a class="btn btn-default btn-xs"
+                           href="{{ path('admin_team_edit', { 'id': team.id }) }}">Wijzig</a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a class="btn btn-default" href="{{ path('admin_team_new') }}">Create a new entry</a>
+
+{% endblock %}
